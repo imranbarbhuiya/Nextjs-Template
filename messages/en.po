@@ -25,3 +25,31 @@ msgstr "Button"
 #: app/page.tsx
 msgid "VoG1_A"
 msgstr "Press {key} to toggle dark mode"
+
+#: components/pwa-install-prompt.tsx
+msgid "gdcvkk"
+msgstr "Tap the"
+
+#: components/pwa-install-prompt.tsx
+msgid "ca4lPY"
+msgstr "Share button"
+
+#: components/pwa-install-prompt.tsx
+msgid "kQAf2d"
+msgstr "Select"
+
+#: components/pwa-install-prompt.tsx
+msgid "a5X16m"
+msgstr "Add to Home Screen"
+
+#: components/pwa-install-prompt.tsx
+msgid "kwvh00"
+msgstr "Install Now"
+
+#: components/pwa-install-prompt.tsx
+msgid "MKC-S9"
+msgstr "Install App"
+
+#: components/pwa-install-prompt.tsx
+msgid "aEXSWq"
+msgstr "Install this application for quick access."

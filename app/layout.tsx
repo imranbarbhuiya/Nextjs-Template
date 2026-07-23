@@ -2,9 +2,12 @@ import { Geist_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from 'next/font/googl
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale } from 'next-intl/server';
 
+import { PwaInstallPrompt } from '@/components/pwa-install-prompt';
 import { ThemeProvider } from '@/components/theme-provider';
 import { DirectionProvider } from '@/components/ui/direction';
 import { cn } from '@/lib/utils';
+
+import type { Metadata, Viewport } from 'next';
 
 import './globals.css';
 
@@ -24,6 +27,30 @@ const fontMono = Geist_Mono({
 	subsets: ['latin'],
 	variable: '--font-mono',
 });
+
+export const viewport: Viewport = {
+	width: 'device-width',
+	initialScale: 1,
+	maximumScale: 1,
+	userScalable: false,
+};
+
+export const metadata: Metadata = {
+	title: 'Next.js Template',
+	description: 'A Next.js App Router template',
+	appleWebApp: {
+		capable: true,
+		statusBarStyle: 'default',
+		title: 'Next.js Template',
+	},
+	icons: {
+		icon: '/logo.png',
+		apple: '/logo.png',
+	},
+	other: {
+		google: 'notranslate',
+	},
+};
 
 export default async function RootLayout({
 	children,
@@ -50,7 +77,10 @@ export default async function RootLayout({
 			<body className="notranslate" suppressHydrationWarning>
 				<DirectionProvider direction={direction}>
 					<NextIntlClientProvider>
-						<ThemeProvider>{children}</ThemeProvider>
+						<ThemeProvider>
+							<PwaInstallPrompt />
+							{children}
+						</ThemeProvider>
 					</NextIntlClientProvider>
 				</DirectionProvider>
 			</body>

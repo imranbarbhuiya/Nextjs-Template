@@ -1,3 +1,4 @@
+import withSerwistInit from '@serwist/next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 import type { NextConfig } from 'next';
@@ -15,6 +16,15 @@ const withNextIntl = createNextIntlPlugin({
 	},
 });
 
+const withSerwist = withSerwistInit({
+	swSrc: 'app/sw.ts',
+	swDest: 'public/sw.js',
+	reloadOnOnline: true,
+	disable: process.env.NODE_ENV === 'development',
+});
+
 const nextConfig: NextConfig = {};
 
-export default withNextIntl(nextConfig);
+const intlConfig = withNextIntl(nextConfig);
+
+export default process.env.NODE_ENV === 'development' ? intlConfig : withSerwist(intlConfig);

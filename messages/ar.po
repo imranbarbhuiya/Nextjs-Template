@@ -25,3 +25,31 @@ msgstr "زر"
 #: app/page.tsx
 msgid "VoG1_A"
 msgstr "اضغط {key} لتبديل الوضع الداكن"
+
+#: components/pwa-install-prompt.tsx
+msgid "gdcvkk"
+msgstr "اضغط على"
+
+#: components/pwa-install-prompt.tsx
+msgid "ca4lPY"
+msgstr "زر المشاركة"
+
+#: components/pwa-install-prompt.tsx
+msgid "kQAf2d"
+msgstr "اختر"
+
+#: components/pwa-install-prompt.tsx
+msgid "a5X16m"
+msgstr "إضافة إلى الشاشة الرئيسية"
+
+#: components/pwa-install-prompt.tsx
+msgid "kwvh00"
+msgstr "تثبيت الآن"
+
+#: components/pwa-install-prompt.tsx
+msgid "MKC-S9"
+msgstr "تثبيت التطبيق"
+
+#: components/pwa-install-prompt.tsx
+msgid "aEXSWq"
+msgstr "ثبّت هذا التطبيق للوصول السريع."
