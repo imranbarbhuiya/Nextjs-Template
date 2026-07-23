@@ -1,0 +1,27 @@
+msgid ""
+msgstr ""
+"Language: ar\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: next-intl\n"
+"X-Crowdin-SourceKey: msgstr\n"
+
+#: app/page.tsx
+msgid "kX235w"
+msgstr "المشروع جاهز!"
+
+#: app/page.tsx
+msgid "i2Dojj"
+msgstr "يمكنك الآن إضافة المكونات والبدء في البناء."
+
+#: app/page.tsx
+msgid "IHwlxa"
+msgstr "لقد أضفنا بالفعل مكوّن الزر لك."
+
+#: app/page.tsx
+msgid "KP63fg"
+msgstr "زر"
+
+#: app/page.tsx
+msgid "VoG1_A"
+msgstr "اضغط {key} لتبديل الوضع الداكن"

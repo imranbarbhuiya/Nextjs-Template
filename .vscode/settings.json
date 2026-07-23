@@ -12,8 +12,15 @@
 	"files.associations": {
 		"*.css": "tailwindcss"
 	},
+	"files.readonlyInclude": {
+		"messages/en.po": true
+	},
 	"tailwindCSS.experimental.classRegex": [
 		["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
 		["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"]
-	]
+	],
+	"i18n-ally.localesPaths": ["i18n", "messages"],
+	"i18n-ally.displayLanguage": "en",
+	"i18n-ally.enabledFrameworks": ["i18next"],
+	"i18n-ally.sourceLanguage": "en"
 }

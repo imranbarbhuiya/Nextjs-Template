@@ -1,46 +1,59 @@
-import { Geist_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google"
+import { Geist_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from 'next/font/google';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { ThemeProvider } from '@/components/theme-provider';
+import { DirectionProvider } from '@/components/ui/direction';
+import { cn } from '@/lib/utils';
+
+import './globals.css';
 
 const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
-  subsets: ["arabic", "latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-ibm-plex-sans-arabic",
-})
+	subsets: ['arabic', 'latin'],
+	weight: ['400', '500', '600', '700'],
+	variable: '--font-ibm-plex-sans-arabic',
+});
 
 const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: "variable",
-  variable: "--font-ibm-plex-sans",
-})
+	subsets: ['latin'],
+	weight: 'variable',
+	variable: '--font-ibm-plex-sans',
+});
 
 const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+	subsets: ['latin'],
+	variable: '--font-mono',
+});
 
-export default function RootLayout({
-  children,
+export default async function RootLayout({
+	children,
 }: Readonly<{
-  children: React.ReactNode
+	children: React.ReactNode;
 }>) {
-  return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn(
-        "antialiased",
-        "font-sans",
-        ibmPlexSansArabic.variable,
-        ibmPlexSans.variable,
-        fontMono.variable,
-      )}
-    >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
-    </html>
-  )
+	const locale = await getLocale();
+	const direction = locale === 'ar' ? 'rtl' : 'ltr';
+
+	return (
+		<html
+			lang={locale}
+			dir={direction}
+			suppressHydrationWarning
+			translate="no"
+			className={cn(
+				'antialiased',
+				'font-sans',
+				ibmPlexSansArabic.variable,
+				ibmPlexSans.variable,
+				fontMono.variable,
+			)}
+		>
+			<body className="notranslate" suppressHydrationWarning>
+				<DirectionProvider direction={direction}>
+					<NextIntlClientProvider>
+						<ThemeProvider>{children}</ThemeProvider>
+					</NextIntlClientProvider>
+				</DirectionProvider>
+			</body>
+		</html>
+	);
 }
