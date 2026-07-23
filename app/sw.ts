@@ -72,8 +72,7 @@ self.addEventListener('pushsubscriptionchange', (event) => {
 					changeEvent.newSubscription ??
 					(await self.registration.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey }));
 				await registerRotatedSubscription(subscription);
-			} catch {
-			}
+			} catch {}
 		})(),
 	);
 });

@@ -1,6 +1,6 @@
 'use client';
 
-import { DirectionProvider as BaseDirectionProvider, useDirection } from '@base-ui/react/direction-provider';
+import { DirectionProvider as BaseDirectionProvider } from '@base-ui/react/direction-provider';
 import * as React from 'react';
 
 function DirectionProvider({
@@ -19,4 +19,6 @@ function DirectionProvider({
 	);
 }
 
-export { DirectionProvider, useDirection };
+export { DirectionProvider };
+
+export { useDirection } from '@base-ui/react/direction-provider';

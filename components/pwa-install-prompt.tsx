@@ -25,10 +25,12 @@ export function PwaInstallPrompt() {
 
 		const handleBeforeInstallPrompt = (e: Event) => {
 			e.preventDefault();
-			setDeferredPrompt(e as Event & {
-				prompt: () => Promise<void>;
-				userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
-			});
+			setDeferredPrompt(
+				e as Event & {
+					prompt: () => Promise<void>;
+					userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
+				},
+			);
 			const isDismissed = localStorage.getItem('pwa-prompt-dismissed');
 			if (!isDismissed) setShowPrompt(true);
 		};
@@ -101,7 +103,8 @@ export function PwaInstallPrompt() {
 
 	return (
 		<div className="fixed inset-x-4 bottom-4 z-50 md:right-6 md:bottom-6 md:left-auto md:w-96">
-			<div className="rounded-2xl border border-border bg-card p-4 shadow-elegant">
+			{/* eslint-disable-next-line better-tailwindcss/no-unknown-classes */}
+			<div className="shadow-elegant rounded-2xl border border-border bg-card p-4">
 				<div className="flex items-start justify-between">
 					<div className="flex-1">
 						<h3 className="font-semibold text-foreground">{t('Install App')}</h3>
@@ -110,8 +113,8 @@ export function PwaInstallPrompt() {
 					<Button
 						className="ms-2 size-6 p-0 text-muted-foreground hover:text-foreground"
 						onClick={dismissPrompt}
-						variant="ghost"
 						size="icon-xs"
+						variant="ghost"
 					>
 						<X className="size-4" />
 					</Button>

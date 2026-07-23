@@ -6,26 +6,6 @@ msgstr ""
 "X-Generator: next-intl\n"
 "X-Crowdin-SourceKey: msgstr\n"
 
-#: app/page.tsx
-msgid "kX235w"
-msgstr "Project ready!"
-
-#: app/page.tsx
-msgid "i2Dojj"
-msgstr "You may now add components and start building."
-
-#: app/page.tsx
-msgid "IHwlxa"
-msgstr "We've already added the button component for you."
-
-#: app/page.tsx
-msgid "KP63fg"
-msgstr "Button"
-
-#: app/page.tsx
-msgid "VoG1_A"
-msgstr "Press {key} to toggle dark mode"
-
 #: components/pwa-install-prompt.tsx
 msgid "gdcvkk"
 msgstr "Tap the"

@@ -5,6 +5,8 @@ import { getLocale } from 'next-intl/server';
 import { PwaInstallPrompt } from '@/components/pwa-install-prompt';
 import { ThemeProvider } from '@/components/theme-provider';
 import { DirectionProvider } from '@/components/ui/direction';
+import { Toaster } from '@/components/ui/sonner';
+import { TooltipProvider } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
 
 import type { Metadata, Viewport } from 'next';
@@ -62,24 +64,22 @@ export default async function RootLayout({
 
 	return (
 		<html
-			lang={locale}
+			className={cn('antialiased', 'font-sans', ibmPlexSansArabic.variable, ibmPlexSans.variable, fontMono.variable)}
 			dir={direction}
+			lang={locale}
 			suppressHydrationWarning
 			translate="no"
-			className={cn(
-				'antialiased',
-				'font-sans',
-				ibmPlexSansArabic.variable,
-				ibmPlexSans.variable,
-				fontMono.variable,
-			)}
 		>
+			{/* eslint-disable-next-line better-tailwindcss/no-unknown-classes */}
 			<body className="notranslate" suppressHydrationWarning>
 				<DirectionProvider direction={direction}>
 					<NextIntlClientProvider>
 						<ThemeProvider>
-							<PwaInstallPrompt />
-							{children}
+							<TooltipProvider>
+								<PwaInstallPrompt />
+								{children}
+								<Toaster />
+							</TooltipProvider>
 						</ThemeProvider>
 					</NextIntlClientProvider>
 				</DirectionProvider>
