@@ -1,10 +1,20 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import { Geist_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
+const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
+  subsets: ["arabic", "latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ibm-plex-sans-arabic",
+})
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: "variable",
+  variable: "--font-ibm-plex-sans",
+})
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
@@ -20,7 +30,13 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
+      className={cn(
+        "antialiased",
+        "font-sans",
+        ibmPlexSansArabic.variable,
+        ibmPlexSans.variable,
+        fontMono.variable,
+      )}
     >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
