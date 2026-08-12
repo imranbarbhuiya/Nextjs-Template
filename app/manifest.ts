@@ -12,34 +12,9 @@ export default function manifest(): MetadataRoute.Manifest {
 		orientation: 'portrait',
 		categories: ['productivity', 'utilities'],
 		icons: [
-			{
-				src: '/logo.png',
-				sizes: '192x192',
-				type: 'image/png',
-				purpose: 'any',
-			},
-			{
-				src: '/logo.png',
-				sizes: '512x512',
-				type: 'image/png',
-				purpose: 'any',
-			},
-		],
-		screenshots: [
-			{
-				src: '/logo.png',
-				sizes: '512x512',
-				type: 'image/png',
-				form_factor: 'wide',
-				label: 'Dashboard',
-			},
-			{
-				src: '/logo.png',
-				sizes: '512x512',
-				type: 'image/png',
-				form_factor: 'narrow',
-				label: 'Mobile Dashboard',
-			},
+			{ src: '/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+			{ src: '/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+			{ src: '/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
 		],
 	};
 }

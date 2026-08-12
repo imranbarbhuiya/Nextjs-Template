@@ -39,16 +39,16 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-	title: 'Next.js Template',
+	metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
+	title: {
+		default: 'Next.js Template',
+		template: '%s · Next.js Template',
+	},
 	description: 'A Next.js App Router template',
 	appleWebApp: {
 		capable: true,
 		statusBarStyle: 'default',
 		title: 'Next.js Template',
-	},
-	icons: {
-		icon: '/logo.png',
-		apple: '/logo.png',
 	},
 	other: {
 		google: 'notranslate',
