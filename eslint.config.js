@@ -35,6 +35,15 @@ export default [
 		},
 	},
 	{
-		ignores: ['.github', '.yarn', '.next', 'node_modules', 'next-env.d.ts'],
+		ignores: [
+			'.github',
+			'.yarn',
+			'.next',
+			'node_modules',
+			'next-env.d.ts',
+			'openapi/api.ts',
+			'public/sw.js',
+			'public/swe-worker*.js',
+		],
 	},
 ];

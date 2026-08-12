@@ -2,6 +2,7 @@ import { Geist_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from 'next/font/googl
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale } from 'next-intl/server';
 
+import { Providers } from '@/components/providers';
 import { PwaInstallPrompt } from '@/components/pwa-install-prompt';
 import { ThemeProvider } from '@/components/theme-provider';
 import { DirectionProvider } from '@/components/ui/direction';
@@ -75,11 +76,13 @@ export default async function RootLayout({
 				<DirectionProvider direction={direction}>
 					<NextIntlClientProvider>
 						<ThemeProvider>
-							<TooltipProvider>
-								<PwaInstallPrompt />
-								{children}
-								<Toaster />
-							</TooltipProvider>
+							<Providers>
+								<TooltipProvider>
+									<PwaInstallPrompt />
+									{children}
+									<Toaster />
+								</TooltipProvider>
+							</Providers>
 						</ThemeProvider>
 					</NextIntlClientProvider>
 				</DirectionProvider>
