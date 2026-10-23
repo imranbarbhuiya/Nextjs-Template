@@ -4,32 +4,39 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: next-intl\n"
-"X-Crowdin-SourceKey: msgstr\n"
+"X-Message-Key: msgctxt\n"
 
 #: components/pwa-install-prompt.tsx
-msgid "gdcvkk"
+msgctxt "gdcvkk"
+msgid "Tap the"
 msgstr "Tap the"
 
 #: components/pwa-install-prompt.tsx
-msgid "ca4lPY"
+msgctxt "ca4lPY"
+msgid "Share button"
 msgstr "Share button"
 
 #: components/pwa-install-prompt.tsx
-msgid "kQAf2d"
+msgctxt "kQAf2d"
+msgid "Select"
 msgstr "Select"
 
 #: components/pwa-install-prompt.tsx
-msgid "a5X16m"
+msgctxt "a5X16m"
+msgid "Add to Home Screen"
 msgstr "Add to Home Screen"
 
 #: components/pwa-install-prompt.tsx
-msgid "kwvh00"
+msgctxt "kwvh00"
+msgid "Install Now"
 msgstr "Install Now"
 
 #: components/pwa-install-prompt.tsx
-msgid "MKC-S9"
+msgctxt "MKC-S9"
+msgid "Install App"
 msgstr "Install App"
 
 #: components/pwa-install-prompt.tsx
-msgid "aEXSWq"
+msgctxt "aEXSWq"
+msgid "Install this application for quick access."
 msgstr "Install this application for quick access."
