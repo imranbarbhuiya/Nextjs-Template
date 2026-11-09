@@ -14,7 +14,8 @@ const makeQueryClient = () =>
 		defaultOptions: {
 			queries: {
 				staleTime: 60 * 1_000,
-				gcTime: 10 * 60 * 1_000,
+				// A timer on the server would hold each render's client and data for the whole gcTime.
+				gcTime: typeof window === 'undefined' ? Infinity : 10 * 60 * 1_000,
 				refetchOnWindowFocus: true,
 				retry: (failureCount, error) => {
 					if (error instanceof ApiError && NON_RETRYABLE.has(error.status)) return false;
